@@ -17,4 +17,19 @@ def get_time_now(req):
     """ % date_now
 
     return HttpResponse(document_html)
+
+def calc_age(req, age):
     
+    age_now = 18
+    period = age - 2023
+    age_future = age_now-period
+
+    document = """
+    <html>
+        <body>
+            <h2> En el ano %s tendras %s anos </h2>
+        </body>
+    </html>
+    """ %(age, age_future)
+
+    return HttpResponse(document)
