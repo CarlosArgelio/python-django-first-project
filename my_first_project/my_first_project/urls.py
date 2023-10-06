@@ -23,5 +23,5 @@ urlpatterns = [
     path('hello-world/', hello),
     path('bye/', bye),
     path('datetime/', get_time_now),
-    path('ages/<int:age>', calc_age),
+    path('ages/<int:age>/<int:birth>', calc_age),
 ]

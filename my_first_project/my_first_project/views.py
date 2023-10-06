@@ -18,11 +18,10 @@ def get_time_now(req):
 
     return HttpResponse(document_html)
 
-def calc_age(req, age):
+def calc_age(req, age, birth):
     
-    age_now = 18
     period = age - 2023
-    age_future = age_now-period
+    birth_future = age-period
 
     document = """
     <html>
@@ -30,6 +29,6 @@ def calc_age(req, age):
             <h2> En el ano %s tendras %s anos </h2>
         </body>
     </html>
-    """ %(age, age_future)
+    """ %(birth, birth_future)
 
     return HttpResponse(document)
