@@ -4,9 +4,15 @@ from datetime import datetime
 
 route_base = "/home/carlos/work/projects/python/frameworks/django/course_1"
 
+class Person(object):
+
+    def __init__(self, name, last_name):
+        self.name = name
+        self.last_name = last_name
+
 def hello(req):
 
-    name = "Carlos"
+    person = Person("Carlos", "Palacios")
 
     home_html = route_base + "/my_first_project/my_first_project/templates/home.html"
     document = open(home_html)
@@ -16,7 +22,8 @@ def hello(req):
     document.close()
 
     my_dict = {
-        "name": name
+        "name": person.name,
+        "lastName": person.last_name
     }
 
     ctx = Context(my_dict)
