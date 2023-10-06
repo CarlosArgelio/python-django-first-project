@@ -6,6 +6,8 @@ route_base = "/home/carlos/work/projects/python/frameworks/django/course_1"
 
 def hello(req):
 
+    name = "Carlos"
+
     home_html = route_base + "/my_first_project/my_first_project/templates/home.html"
     document = open(home_html)
 
@@ -13,7 +15,11 @@ def hello(req):
 
     document.close()
 
-    ctx = Context()
+    my_dict = {
+        "name": name
+    }
+
+    ctx = Context(my_dict)
 
     docs = plt.render(ctx)
 
